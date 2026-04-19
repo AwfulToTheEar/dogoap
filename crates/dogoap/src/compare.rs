@@ -16,13 +16,13 @@ pub enum Compare {
     /// Checks if the first [`Datum`] is less than or equal to the second [`Datum`].
     LessThanEquals(Datum),
     /// Compares first ['Datum'] with reference to second ['Datum'] in ['InternalData']
-    Reference(String, RefenreceCompare)
+    Reference(String, ReferenceCompare)
 }
 
 /// Allows you to Compare State Values between each other.
 #[derive(Clone, Debug, PartialEq)]
 #[cfg_attr(feature = "bevy_reflect", derive(bevy_reflect::Reflect))]
-pub enum RefenreceCompare {
+pub enum ReferenceCompare {
     /// Checks if two [`Datum`] are equal.
     Equals,
     /// Checks if two [`Datum`] are not equal.
@@ -33,19 +33,19 @@ pub enum RefenreceCompare {
     LessThanEquals,
 }
 
-impl Hash for RefenreceCompare {
+impl Hash for ReferenceCompare {
     fn hash<H: Hasher>(&self, state: &mut H) {
         match self {
-            RefenreceCompare::Equals => {
+            ReferenceCompare::Equals => {
                 0_u8.hash(state);
             }
-            RefenreceCompare::NotEquals => {
+            ReferenceCompare::NotEquals => {
                 1_u8.hash(state);
             }
-            RefenreceCompare::GreaterThanEquals => {
+            ReferenceCompare::GreaterThanEquals => {
                 2_u8.hash(state);
             }
-            RefenreceCompare::LessThanEquals => {
+            ReferenceCompare::LessThanEquals => {
                 3_u8.hash(state);
             }
         }
@@ -74,7 +74,7 @@ impl Compare {
     }
 
     /// Convenience method for creating a [`Compare::Reference`]
-    pub fn reference(key: impl Into<String>, compare: RefenreceCompare) -> Self {
+    pub fn reference(key: impl Into<String>, compare: ReferenceCompare) -> Self {
         Compare::Reference(key.into(), compare)
     }
 }
@@ -137,10 +137,10 @@ pub fn compare_values(comparison: &Compare, value: &Datum, data: InternalData) -
                 .unwrap_or_else(|| panic!("Couldn't find key {key:#?} in LocalState"));
 
             match compare {
-                RefenreceCompare::Equals => value == other_value,
-                RefenreceCompare::NotEquals => value != other_value,
-                RefenreceCompare::GreaterThanEquals => value >= other_value,
-                RefenreceCompare::LessThanEquals => value <= other_value,
+                ReferenceCompare::Equals => value == other_value,
+                ReferenceCompare::NotEquals => value != other_value,
+                ReferenceCompare::GreaterThanEquals => value >= other_value,
+                ReferenceCompare::LessThanEquals => value <= other_value,
             }
         }
     }

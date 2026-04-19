@@ -1,7 +1,7 @@
 //! Everything you need to use dogoap
 
 pub use crate::action::Action;
-pub use crate::compare::{Compare, RefenreceCompare};
+pub use crate::compare::{Compare, ReferenceCompare};
 pub use crate::datum::Datum;
 pub use crate::effect::Effect;
 pub use crate::goal::Goal;

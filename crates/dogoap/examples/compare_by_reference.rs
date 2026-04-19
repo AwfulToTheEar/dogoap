@@ -8,7 +8,7 @@ fn main() {
         .with_datum("walk_distance", 0i64)
         .with_datum("target_distance", 10i64);
 
-    let goal = Goal::new().with_req("walk_distance", Compare::reference("target_distance", RefenreceCompare::Equals));
+    let goal = Goal::new().with_req("walk_distance", Compare::reference("target_distance", ReferenceCompare::Equals));
 
     let gather_strength_action = Action::new("gather_strength").with_mutator(Mutator::increment("walk_distance", 5i64));
 
