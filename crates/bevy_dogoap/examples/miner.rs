@@ -204,7 +204,7 @@ fn startup(mut commands: Commands, window: Single<&Window>) {
         });
 
         let text_style = TextFont {
-            font_size: 18.0,
+            font_size: 18.0.into(),
             ..default()
         };
 

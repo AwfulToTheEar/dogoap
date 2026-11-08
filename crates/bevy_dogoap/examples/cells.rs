@@ -95,7 +95,7 @@ fn spawn_cell(commands: &mut Commands, position: Vec3, speed: f32) {
     });
 
     let text_style = TextFont {
-        font_size: 12.0,
+        font_size: 12.0.into(),
         ..default()
     };
 

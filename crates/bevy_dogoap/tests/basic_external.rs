@@ -128,7 +128,7 @@ mod test {
             FixedUpdate,
             (start_new_plan, handle_eat_action, handle_sleep_action),
         )
-        .add_observer(|_: On<Remove, IsPlanning>, mut commands: Commands| {
+        .add_observer(|_: On<Remove<IsPlanning>>, mut commands: Commands| {
             commands.insert_resource(PlannerDone);
         });
 

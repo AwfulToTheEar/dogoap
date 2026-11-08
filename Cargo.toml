@@ -29,13 +29,13 @@ panic = "abort"
 dogoap = { path = "crates/dogoap", version = "0.6.0" }
 dogoap_macros = { path = "crates/dogoap_macros", version = "0.6.0" }
 
-bevy_ecs = { version = "0.18", default-features = false }
-bevy_app = { version = "0.18", default-features = false }
-bevy_log = { version = "0.18", default-features = false }
-bevy_reflect = { version = "0.18", default-features = false }
-bevy_platform = { version = "0.18", default-features = false }
-bevy_tasks = { version = "0.18", default-features = false }
-bevy-trait-query = { version = "0.18" }
+bevy_ecs = { version = "^0.20", default-features = false }
+bevy_app = { version = "^0.20", default-features = false }
+bevy_log = { version = "^0.20", default-features = false }
+bevy_reflect = { version = "^0.20", default-features = false }
+bevy_platform = { version = "^0.20", default-features = false }
+bevy_tasks = { version = "^0.20", default-features = false }
+bevy-trait-query = { git = "https://github.com/AwfulToTheEar/bevy-trait-query.git", branch = "update_to_bevy_0_20" }
 
 rand = "0.9"
 pathfinding = "4.15"
@@ -46,7 +46,7 @@ criterion = { version = "0.8", features = ["html_reports"] }
 crossbeam-channel = "0.5"
 
 # for running examples
-bevy = { version = "0.18", default-features = true, features = ["track_location"] }
+bevy = { version = "^0.20", default-features = true, features = ["track_location"] }
 
 [workspace.lints.rust]
 missing_docs = "warn"

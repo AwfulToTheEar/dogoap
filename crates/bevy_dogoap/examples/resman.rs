@@ -256,7 +256,7 @@ fn spawn_labeled<T: Component>(
             sub.spawn((
                 Transform::from_translation(label_offset),
                 Text2d(label.into()),
-                TextFont { font_size: 12.0, ..default() },
+                TextFont { font_size: 12.0.into(), ..default() },
                 bevy::sprite::Anchor::TOP_LEFT,
             ));
         });
@@ -480,7 +480,7 @@ fn setup(mut commands: Commands) {
             sub.spawn((
                 Transform::from_translation(Vec3::new(0.0, 50.0, 10.0)),
                 Text2d("Order Desk".into()),
-                TextFont { font_size: 12.0, ..default() },
+                TextFont { font_size: 12.0.into(), ..default() },
                 bevy::sprite::Anchor::TOP_LEFT,
             ));
         });
@@ -502,7 +502,7 @@ fn setup(mut commands: Commands) {
     commands.spawn((
         Transform::from_translation(Vec3::new(-360.0, 220.0, 100.0)),
         Text2d("Money: 0".into()),
-        TextFont { font_size: 16.0, ..default() },
+        TextFont { font_size: 16.0.into(), ..default() },
         bevy::sprite::Anchor::TOP_LEFT,
         MoneyText,
     ));
@@ -574,7 +574,7 @@ fn spawn_customer(commands: &mut Commands, name: &str, thirst_initial: f64, pos:
             sub.spawn((
                 Transform::from_translation(Vec3::new(-70.0, 0.0, 10.0)),
                 Text2d("".into()),
-                TextFont { font_size: 12.0, ..default() },
+                TextFont { font_size: 12.0.into(), ..default() },
                 bevy::sprite::Anchor::TOP_LEFT,
                 StateDebugText,
             ));
@@ -665,7 +665,7 @@ fn spawn_worker(commands: &mut Commands, pos: Vec3) {
             sub.spawn((
                 Transform::from_translation(Vec3::new(50.0, 0.0, 10.0)),
                 Text2d("".into()),
-                TextFont { font_size: 12.0, ..default() },
+                TextFont { font_size: 12.0.into(), ..default() },
                 bevy::sprite::Anchor::TOP_LEFT,
                 StateDebugText,
             ));

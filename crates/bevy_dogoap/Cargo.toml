@@ -1,6 +1,6 @@
 [package]
 name = "bevy_dogoap"
-version = "0.6.0"
+version = "0.7.0"
 description = "Integration between dogoap and bevy"
 edition = { workspace = true }
 license = { workspace = true }
