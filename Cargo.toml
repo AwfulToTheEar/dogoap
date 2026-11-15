@@ -26,7 +26,7 @@ panic = "abort"
 
 
 [workspace.dependencies]
-dogoap = { path = "crates/dogoap", version = "0.6.0" }
+dogoap = { path = "crates/dogoap", version = "0.7.0" }
 dogoap_macros = { path = "crates/dogoap_macros", version = "0.6.0" }
 
 bevy_ecs = { version = "^0.20", default-features = false }
